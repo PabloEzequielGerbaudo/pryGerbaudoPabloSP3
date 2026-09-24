@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Repuestos));
             lblTitulo = new Label();
             lstRespuestos = new ListBox();
             tbCargadeRepuesto = new TabControl();
@@ -44,12 +45,12 @@
             txtDescripcion = new TextBox();
             txtNumResp = new TextBox();
             tbpBusqueda = new TabPage();
+            btnBuscar = new Button();
             groupBox1 = new GroupBox();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             comboBox1 = new ComboBox();
             label1 = new Label();
-            btnBuscar = new Button();
             tbCargadeRepuesto.SuspendLayout();
             tbpCarga.SuspendLayout();
             tbpBusqueda.SuspendLayout();
@@ -115,12 +116,13 @@
             btnGuardar.TabIndex = 16;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrecio.Location = new Point(86, 148);
+            lblPrecio.Location = new Point(166, 78);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(77, 30);
             lblPrecio.TabIndex = 21;
@@ -140,7 +142,7 @@
             // 
             lblNumero.AutoSize = true;
             lblNumero.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNumero.Location = new Point(63, 76);
+            lblNumero.Location = new Point(3, 76);
             lblNumero.Name = "lblNumero";
             lblNumero.Size = new Size(97, 30);
             lblNumero.TabIndex = 19;
@@ -169,41 +171,47 @@
             // cmbOrigen
             // 
             cmbOrigen.FormattingEnabled = true;
-            cmbOrigen.Items.AddRange(new object[] { "F", "P", "R" });
-            cmbOrigen.Location = new Point(166, 11);
+            cmbOrigen.Items.AddRange(new object[] { "NACIONAL", "IMPORTADO" });
+            cmbOrigen.Location = new Point(162, 47);
             cmbOrigen.Name = "cmbOrigen";
             cmbOrigen.Size = new Size(137, 23);
             cmbOrigen.TabIndex = 11;
+            cmbOrigen.SelectedIndexChanged += cmbOrigen_SelectedIndexChanged;
             // 
             // cmbMarca
             // 
             cmbMarca.FormattingEnabled = true;
-            cmbMarca.Items.AddRange(new object[] { "I", "N" });
-            cmbMarca.Location = new Point(166, 47);
+            cmbMarca.Items.AddRange(new object[] { "PEUGEOT", "FIAT", "RENAULT" });
+            cmbMarca.Location = new Point(162, 13);
             cmbMarca.Name = "cmbMarca";
             cmbMarca.Size = new Size(137, 23);
             cmbMarca.TabIndex = 12;
+            cmbMarca.SelectedIndexChanged += cmbMarca_SelectedIndexChanged;
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(169, 83);
+            txtPrecio.Location = new Point(106, 83);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(50, 23);
             txtPrecio.TabIndex = 13;
+            txtPrecio.TextChanged += txtPrecio_TextChanged;
             // 
             // txtDescripcion
             // 
             txtDescripcion.Location = new Point(169, 119);
+            txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(122, 23);
-            txtDescripcion.TabIndex = 14;
+            txtDescripcion.Size = new Size(144, 49);
+            txtDescripcion.TabIndex = 15;
+            txtDescripcion.TextChanged += txtDescripcion_TextChanged;
             // 
             // txtNumResp
             // 
-            txtNumResp.Location = new Point(169, 155);
+            txtNumResp.Location = new Point(249, 83);
             txtNumResp.Name = "txtNumResp";
             txtNumResp.Size = new Size(50, 23);
-            txtNumResp.TabIndex = 15;
+            txtNumResp.TabIndex = 14;
+            txtNumResp.TextChanged += txtNumResp_TextChanged;
             // 
             // tbpBusqueda
             // 
@@ -217,6 +225,16 @@
             tbpBusqueda.TabIndex = 1;
             tbpBusqueda.Text = "Búsqueda de repuesto";
             tbpBusqueda.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscar.Location = new Point(347, 224);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(140, 47);
+            btnBuscar.TabIndex = 17;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -270,24 +288,17 @@
             label1.TabIndex = 15;
             label1.Text = "Búsqueda de repuestos";
             // 
-            // btnBuscar
-            // 
-            btnBuscar.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(347, 224);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(140, 47);
-            btnBuscar.TabIndex = 17;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // Repuestos
             // 
+            AcceptButton = btnGuardar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(521, 386);
             Controls.Add(tbCargadeRepuesto);
             Controls.Add(lblTitulo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Repuestos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Repuestos";
             tbCargadeRepuesto.ResumeLayout(false);
             tbpCarga.ResumeLayout(false);
