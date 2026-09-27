@@ -109,6 +109,7 @@
             // 
             // btnGuardar
             // 
+            btnGuardar.Enabled = false;
             btnGuardar.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.Location = new Point(347, 148);
             btnGuardar.Name = "btnGuardar";
@@ -170,6 +171,7 @@
             // 
             // cmbOrigen
             // 
+            cmbOrigen.Enabled = false;
             cmbOrigen.FormattingEnabled = true;
             cmbOrigen.Items.AddRange(new object[] { "NACIONAL", "IMPORTADO" });
             cmbOrigen.Location = new Point(162, 47);
@@ -190,6 +192,7 @@
             // 
             // txtPrecio
             // 
+            txtPrecio.Enabled = false;
             txtPrecio.Location = new Point(106, 83);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(50, 23);
@@ -198,6 +201,7 @@
             // 
             // txtDescripcion
             // 
+            txtDescripcion.Enabled = false;
             txtDescripcion.Location = new Point(169, 119);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
@@ -207,6 +211,7 @@
             // 
             // txtNumResp
             // 
+            txtNumResp.Enabled = false;
             txtNumResp.Location = new Point(249, 83);
             txtNumResp.Name = "txtNumResp";
             txtNumResp.Size = new Size(50, 23);
