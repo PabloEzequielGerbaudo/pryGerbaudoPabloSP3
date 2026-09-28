@@ -82,23 +82,25 @@ namespace pryGerbaudoPabloSP3
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-         Indice = Indice + 1;
-            if (Indice > 5)
-            {
-                MessageBox.Show ("Lista completa");
-            }
-            else
-            {
+
                 VecRepuesto[Indice] = (Marca + Origen + precio + num + Descripcion);
                 Repuesto = Marca + " " + Origen + " " + precio + " " + num + " " + Descripcion;
                 lstRespuestos.Items.Add(Repuesto);
                 cmbMarca.SelectedIndex = -1;
                 cmbMarca.Focus();
                 cmbOrigen.SelectedIndex = -1;
+                cmbOrigen.Enabled = false;
                 txtPrecio.Clear();
+                txtPrecio.Enabled = false;
                 txtNumResp.Clear();
-                txtDescripcion.Clear();
-            }
+                txtDescripcion.Clear();       
+                
+                Indice = Indice + 1;
+                if (Indice>4)
+                {
+                    btnGuardar.Enabled=false;
+                MessageBox.Show("Lista completa");
+                }
         }
     }
 }

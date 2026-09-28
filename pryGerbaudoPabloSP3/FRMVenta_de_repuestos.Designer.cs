@@ -73,7 +73,7 @@
             lstRespuestos.Location = new Point(0, 198);
             lstRespuestos.Name = "lstRespuestos";
             lstRespuestos.Size = new Size(487, 49);
-            lstRespuestos.TabIndex = 12;
+            lstRespuestos.TabIndex = 6;
             // 
             // tbCargadeRepuesto
             // 
@@ -114,7 +114,7 @@
             btnGuardar.Location = new Point(347, 148);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(140, 47);
-            btnGuardar.TabIndex = 16;
+            btnGuardar.TabIndex = 5;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
@@ -177,7 +177,7 @@
             cmbOrigen.Location = new Point(162, 47);
             cmbOrigen.Name = "cmbOrigen";
             cmbOrigen.Size = new Size(137, 23);
-            cmbOrigen.TabIndex = 11;
+            cmbOrigen.TabIndex = 1;
             cmbOrigen.SelectedIndexChanged += cmbOrigen_SelectedIndexChanged;
             // 
             // cmbMarca
@@ -187,7 +187,7 @@
             cmbMarca.Location = new Point(162, 13);
             cmbMarca.Name = "cmbMarca";
             cmbMarca.Size = new Size(137, 23);
-            cmbMarca.TabIndex = 12;
+            cmbMarca.TabIndex = 0;
             cmbMarca.SelectedIndexChanged += cmbMarca_SelectedIndexChanged;
             // 
             // txtPrecio
@@ -196,7 +196,7 @@
             txtPrecio.Location = new Point(106, 83);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(50, 23);
-            txtPrecio.TabIndex = 13;
+            txtPrecio.TabIndex = 2;
             txtPrecio.TextChanged += txtPrecio_TextChanged;
             // 
             // txtDescripcion
@@ -206,7 +206,7 @@
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(144, 49);
-            txtDescripcion.TabIndex = 15;
+            txtDescripcion.TabIndex = 4;
             txtDescripcion.TextChanged += txtDescripcion_TextChanged;
             // 
             // txtNumResp
@@ -215,7 +215,7 @@
             txtNumResp.Location = new Point(249, 83);
             txtNumResp.Name = "txtNumResp";
             txtNumResp.Size = new Size(50, 23);
-            txtNumResp.TabIndex = 14;
+            txtNumResp.TabIndex = 3;
             txtNumResp.TextChanged += txtNumResp_TextChanged;
             // 
             // tbpBusqueda
